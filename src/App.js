@@ -24,7 +24,7 @@ function App() {
             <Route exact path="/explore">
               <Explore />
             </Route>
-            <Route exact path="/dashboard">
+            <Route path="/dashboard">
               <Dashboard />
             </Route>
             <Route exact path="/login">

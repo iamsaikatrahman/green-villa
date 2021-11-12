@@ -1,14 +1,21 @@
 import React, { useEffect, useRef } from "react";
-import { MdPayment } from "react-icons/md";
+import {
+  MdAddchart,
+  MdOutlineManageAccounts,
+  MdPayment,
+  MdPlaylistAddCheck,
+} from "react-icons/md";
 import { FaRegListAlt } from "react-icons/fa";
+import { VscServerProcess } from "react-icons/vsc";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import { FiHome } from "react-icons/fi";
 import { RiLogoutBoxLine } from "react-icons/ri";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../images/footer.png";
 import useAuth from "../../hooks/useAuth";
 
-const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
+const Sidebar = ({ sidebarOpen, setSidebarOpen, path, url }) => {
+  //   let { path, url } = useRouteMatch();
   const trigger = useRef(null);
   const sidebar = useRef(null);
   const { logOut } = useAuth();
@@ -76,12 +83,12 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
             </svg>
           </button>
           {/* Logo */}
-          <NavLink exact to="/" className="block flex items-center">
+          <Link exact to="/" className="block flex items-center">
             <img src={logo} className="h-12" alt="" />
             <span className="text-white font-bold text-xl">
               Green <span style={{ color: "#8FBE32" }}>Villa</span>
             </span>
-          </NavLink>
+          </Link>
         </div>
 
         {/* Links */}
@@ -92,7 +99,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           <ul className="mt-3">
             {/* Home */}
             <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
-              <NavLink
+              <Link
                 exact
                 to="/"
                 className="block text-gray-200 hover:text-white transition duration-150"
@@ -101,50 +108,102 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   <FiHome className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
                   <span className="text-sm font-medium">Home</span>
                 </div>
-              </NavLink>
+              </Link>
             </li>
             {/* Pay */}
             <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
-              <NavLink
+              <Link
                 exact
-                to="/explore"
+                to={`${url}/pay`}
                 className="block text-gray-200 hover:text-white transition duration-150"
               >
                 <div className="flex flex-grow">
                   <MdPayment className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
                   <span className="text-sm font-medium">Pay</span>
                 </div>
-              </NavLink>
+              </Link>
             </li>
             {/* My Orders */}
             <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
-              <NavLink
+              <Link
                 exact
-                to="/"
+                to={`${url}`}
                 className="block text-gray-200 hover:text-white transition duration-150"
               >
                 <div className="flex flex-grow">
                   <FaRegListAlt className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
                   <span className="text-sm font-medium">My Orders</span>
                 </div>
-              </NavLink>
+              </Link>
             </li>
             {/* Review */}
             <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
-              <NavLink
+              <Link
                 exact
-                to="/"
+                to={`${url}/review`}
                 className="block text-gray-200 hover:text-white transition duration-150"
               >
                 <div className="flex flex-grow">
                   <BiMessageSquareDetail className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
                   <span className="text-sm font-medium">Review</span>
                 </div>
-              </NavLink>
+              </Link>
+            </li>
+            {/* Manage All Orders */}
+            <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
+              <Link
+                exact
+                to="/"
+                className="block text-gray-200 hover:text-white transition duration-150"
+              >
+                <div className="flex flex-grow">
+                  <MdPlaylistAddCheck className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
+                  <span className="text-sm font-medium">Manage Orders</span>
+                </div>
+              </Link>
+            </li>
+            {/* Manage Products */}
+            <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
+              <Link
+                exact
+                to="/"
+                className="block text-gray-200 hover:text-white transition duration-150"
+              >
+                <div className="flex flex-grow">
+                  <VscServerProcess className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
+                  <span className="text-sm font-medium">Manage Products</span>
+                </div>
+              </Link>
+            </li>
+            {/* Add Apartment */}
+            <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
+              <Link
+                exact
+                to="/"
+                className="block text-gray-200 hover:text-white transition duration-150"
+              >
+                <div className="flex flex-grow">
+                  <MdAddchart className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
+                  <span className="text-sm font-medium">Add Product</span>
+                </div>
+              </Link>
+            </li>
+            {/* Make Admin */}
+            <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
+              <Link
+                exact
+                to="/"
+                className="block text-gray-200 hover:text-white transition duration-150"
+              >
+                <div className="flex flex-grow">
+                  <MdOutlineManageAccounts className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
+                  <span className="text-sm font-medium">Make Admin</span>
+                </div>
+              </Link>
             </li>
             {/* LogOut */}
             <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
-              <NavLink
+              <Link
                 to="/"
                 onClick={logOut}
                 className="block cursor-pointer text-gray-200 hover:text-white transition duration-150"
@@ -153,7 +212,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   <RiLogoutBoxLine className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
                   <span className="text-sm font-medium">LogOut</span>
                 </div>
-              </NavLink>
+              </Link>
             </li>
           </ul>
         </div>

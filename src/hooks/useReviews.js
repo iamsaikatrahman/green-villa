@@ -4,7 +4,7 @@ const useReviews = () => {
   const [reviews, setReviews] = useState([]);
   const [isloading, setIsloading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://thawing-brook-28581.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);

@@ -4,7 +4,7 @@ const useApartments = () => {
   const [apartments, setApartments] = useState([]);
   const [isloading, setIsLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/apartments")
+    fetch("https://thawing-brook-28581.herokuapp.com/apartments")
       .then((res) => res.json())
       .then((data) => {
         setApartments(data);
