@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import DashboardHeader from "./DashboardHeader";
+import ManageOrders from "./ManageOrders";
+import ManageProducts from "./ManageProducts";
+import AddProduct from "./AddProduct";
+import MakeAdmin from "./MakeAdmin";
 import MyOrder from "./MyOrder";
 import Pay from "./Pay";
 import Review from "./Review";
@@ -38,6 +42,18 @@ const Dashboard = () => {
             </Route>
             <Route exact path={`${path}/review`}>
               <Review />
+            </Route>
+            <Route exact path={`${path}/manageorders`}>
+              <ManageOrders />
+            </Route>
+            <Route exact path={`${path}/manageproducts`}>
+              <ManageProducts />
+            </Route>
+            <Route exact path={`${path}/addproduct`}>
+              <AddProduct />
+            </Route>
+            <Route exact path={`${path}/makeadmin`}>
+              <MakeAdmin />
             </Route>
           </Switch>
         </div>
