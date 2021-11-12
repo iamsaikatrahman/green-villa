@@ -1,0 +1,7 @@
+.bg-reviews {
+  background: linear-gradient(#ffffffa8, #fffdfd4d),
+    url("../../images/reviewbg.png");
+  height: 320px;
+  width: 100%;
+  background-size: cover;
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Luxury Family Apartment",
+    "imgUrl": "https://i.ibb.co/5K7XwLC/Luxury-Family-Apartment.jpg",
+    "price": "320000",
+    "location": "70 Bright St New York, USA",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "aptSpace": "460ft2"
+  },
+  {
+    "name": "Contemporary Apartment",
+    "imgUrl": "https://i.ibb.co/Ss9s8zC/pexels-photomix-company-565324.jpg",
+    "price": "4520000",
+    "location": "3073 Tree Frog Lane, Kansas City",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "aptSpace": "320ft2"
+  },
+  {
+    "name": "East Side Living Apartment",
+    "imgUrl": "https://i.ibb.co/KKb3mRH/East-Side-Living-Apartment.jpg",
+    "price": "5980000",
+    "location": "40 Journal Square, NJ, USA",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "aptSpace": "500ft2"
+  },
+  {
+    "name": "Big Tree Apartments",
+    "imgUrl": "https://i.ibb.co/kHzn6Ff/pexels-chait-goli-1918291.jpg",
+    "price": "420000",
+    "location": "75 Prince St, NY, USA",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "aptSpace": "320ft2"
+  },
+  {
+    "name": "Luxurious Landing",
+    "imgUrl": "https://i.ibb.co/L8cDpxg/pexels-john-tekeridis-1428348.jpg",
+    "price": "1650000",
+    "location": "W 85th St, New York, USA",
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "aptSpace": "1210ft2"
+  },
+  {
+    "name": "Urban Apartment",
+    "imgUrl": "https://i.ibb.co/ZN8BFyp/pexels-skitterphoto-584399.jpg",
+    "price": "25000",
+    "location": "3443 Montgomery St, NY, USA",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "aptSpace": "510ft2"
+  }
+]
