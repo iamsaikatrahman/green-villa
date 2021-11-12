@@ -80,9 +80,9 @@ const useFirebase = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        // getIdToken(user).then((idToken) => {
-        //   setToken(idToken);
-        // });
+        getIdToken(user).then((idToken) => {
+          setToken(idToken);
+        });
       } else {
         setUser({});
       }
@@ -91,11 +91,11 @@ const useFirebase = () => {
     return () => unsubscribe;
   }, [auth]);
   //   Check Admin
-  // useEffect(() => {
-  //   fetch(`users/${user.email}`)
-  //     .then((res) => res.json())
-  //     .then((data) => setAdmin(data.admin));
-  // }, [user.email]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/${user.email}`)
+      .then((res) => res.json())
+      .then((data) => setAdmin(data.admin));
+  }, [user.email]);
   //   user Log Out
   const logOut = () => {
     setIsloading(true);

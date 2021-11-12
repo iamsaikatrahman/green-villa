@@ -17,7 +17,6 @@ const Login = () => {
   } = useForm();
   const onSubmit = (data) => {
     signInWithEmail(data.email, data.password, location, history);
-    console.log(data);
   };
   const handleSignInGoogle = () => {
     signInWithGoogle(location, history);

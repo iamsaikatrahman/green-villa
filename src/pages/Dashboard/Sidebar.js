@@ -15,7 +15,7 @@ import logo from "../../images/footer.png";
 import useAuth from "../../hooks/useAuth";
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen, path, url }) => {
-  //   let { path, url } = useRouteMatch();
+  const { admin } = useAuth();
   const trigger = useRef(null);
   const sidebar = useRef(null);
   const { logOut } = useAuth();
@@ -150,57 +150,65 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, path, url }) => {
               </Link>
             </li>
             {/* Manage All Orders */}
-            <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
-              <Link
-                exact
-                to={`${url}/manageorders`}
-                className="block text-gray-200 hover:text-white transition duration-150"
-              >
-                <div className="flex flex-grow">
-                  <MdPlaylistAddCheck className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
-                  <span className="text-sm font-medium">Manage Orders</span>
-                </div>
-              </Link>
-            </li>
+            {admin && (
+              <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
+                <Link
+                  exact
+                  to={`${url}/manageorders`}
+                  className="block text-gray-200 hover:text-white transition duration-150"
+                >
+                  <div className="flex flex-grow">
+                    <MdPlaylistAddCheck className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
+                    <span className="text-sm font-medium">Manage Orders</span>
+                  </div>
+                </Link>
+              </li>
+            )}
             {/* Manage Products */}
-            <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
-              <Link
-                exact
-                to={`${url}/manageproducts`}
-                className="block text-gray-200 hover:text-white transition duration-150"
-              >
-                <div className="flex flex-grow">
-                  <VscServerProcess className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
-                  <span className="text-sm font-medium">Manage Products</span>
-                </div>
-              </Link>
-            </li>
+            {admin && (
+              <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
+                <Link
+                  exact
+                  to={`${url}/manageproducts`}
+                  className="block text-gray-200 hover:text-white transition duration-150"
+                >
+                  <div className="flex flex-grow">
+                    <VscServerProcess className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
+                    <span className="text-sm font-medium">Manage Products</span>
+                  </div>
+                </Link>
+              </li>
+            )}
             {/* Add Apartment */}
-            <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
-              <Link
-                exact
-                to={`${url}/addproduct`}
-                className="block text-gray-200 hover:text-white transition duration-150"
-              >
-                <div className="flex flex-grow">
-                  <MdAddchart className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
-                  <span className="text-sm font-medium">Add Product</span>
-                </div>
-              </Link>
-            </li>
+            {admin && (
+              <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
+                <Link
+                  exact
+                  to={`${url}/addproduct`}
+                  className="block text-gray-200 hover:text-white transition duration-150"
+                >
+                  <div className="flex flex-grow">
+                    <MdAddchart className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
+                    <span className="text-sm font-medium">Add Product</span>
+                  </div>
+                </Link>
+              </li>
+            )}
             {/* Make Admin */}
-            <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
-              <Link
-                exact
-                to={`${url}/makeadmin`}
-                className="block text-gray-200 hover:text-white transition duration-150"
-              >
-                <div className="flex flex-grow">
-                  <MdOutlineManageAccounts className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
-                  <span className="text-sm font-medium">Make Admin</span>
-                </div>
-              </Link>
-            </li>
+            {admin && (
+              <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
+                <Link
+                  exact
+                  to={`${url}/makeadmin`}
+                  className="block text-gray-200 hover:text-white transition duration-150"
+                >
+                  <div className="flex flex-grow">
+                    <MdOutlineManageAccounts className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
+                    <span className="text-sm font-medium">Make Admin</span>
+                  </div>
+                </Link>
+              </li>
+            )}
             {/* LogOut */}
             <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
               <Link

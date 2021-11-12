@@ -35,7 +35,6 @@ const Registration = () => {
     if (user?.email) {
       setCreateUser(true);
     }
-    console.log(data);
   };
   const handleSignInGoogle = () => {
     signInWithGoogle(location, history);
