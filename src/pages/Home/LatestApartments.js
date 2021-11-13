@@ -1,5 +1,3 @@
-import ApartmentCard from "../../components/ApartmentCard";
-import ExploreApartmentCard from "../../components/ExploreApartmentCard";
 import HomeApartmentCard from "../../components/HomeApartmentCard";
 import Loading from "../../components/Loading";
 import SectionHeader from "../../components/SectionHeader";

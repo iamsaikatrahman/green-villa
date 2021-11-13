@@ -21,7 +21,7 @@ const OrderCard = ({
   const [isApprove, setIsApprove] = useState(bookingstatus);
   const handleUpdateStatus = (id) => {
     const data = { bookingstatus };
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://thawing-brook-28581.herokuapp.com/orders/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

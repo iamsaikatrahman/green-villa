@@ -6,7 +6,7 @@ const useOrders = () => {
   const [myOrders, setmyOrders] = useState([]);
   const [isloading, setIsLoading] = useState(true);
   useEffect(() => {
-    const url = `http://localhost:5000/myorders/${user.email}`;
+    const url = `https://thawing-brook-28581.herokuapp.com/myorders/${user.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -18,7 +18,7 @@ const useOrders = () => {
   const handleDeleteBooking = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `https://thawing-brook-28581.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })

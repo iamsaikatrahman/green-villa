@@ -30,12 +30,14 @@ const BuyServiceForm = ({
     data.bathrooms = bathrooms;
     data.aptSpace = aptSpace;
     data.bookingstatus = "Pending";
-    axios.post("http://localhost:5000/orders", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("Booking Successfully done.");
-        reset();
-      }
-    });
+    axios
+      .post("https://thawing-brook-28581.herokuapp.com/orders", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("Booking Successfully done.");
+          reset();
+        }
+      });
   };
   return (
     <div className="px-4">

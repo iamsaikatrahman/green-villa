@@ -11,12 +11,14 @@ const AddProduct = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    axios.post("http://localhost:5000/apartments", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("Your Apartment Add Sucessfully");
-        reset();
-      }
-    });
+    axios
+      .post("https://thawing-brook-28581.herokuapp.com/apartments", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("Your Apartment Add Sucessfully");
+          reset();
+        }
+      });
   };
   return (
     <div>

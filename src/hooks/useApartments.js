@@ -14,7 +14,7 @@ const useApartments = () => {
   const handleDeleteApartment = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/apartments/${id}`;
+      const url = `https://thawing-brook-28581.herokuapp.com/apartments/${id}`;
       fetch(url, {
         method: "DELETE",
       })

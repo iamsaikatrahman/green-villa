@@ -1,4 +1,3 @@
-import ApartmentCard from "../../components/ApartmentCard";
 import ExploreApartmentCard from "../../components/ExploreApartmentCard";
 import Loading from "../../components/Loading";
 import useApartments from "../../hooks/useApartments";

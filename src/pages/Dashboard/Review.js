@@ -19,13 +19,15 @@ const Review = () => {
   const handlereviewSubmit = (e) => {
     const reviewdata = { message, rating, userName, userImg };
     console.log(reviewdata);
-    axios.post("http://localhost:5000/reviews", reviewdata).then((res) => {
-      if (res.data.insertedId) {
-        alert("Your Reviews Add Sucessfully");
-        setMessage("");
-        setRating(null);
-      }
-    });
+    axios
+      .post("https://thawing-brook-28581.herokuapp.com/reviews", reviewdata)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("Your Reviews Add Sucessfully");
+          setMessage("");
+          setRating(null);
+        }
+      });
     e.preventDefault();
   };
   return (
