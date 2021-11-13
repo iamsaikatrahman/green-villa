@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import review from "../../images/review.png";
 import { FaStar } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth";
