@@ -14,6 +14,23 @@ const ManageOrders = () => {
         setIsLoading(false);
       });
   }, []);
+  const handleDeleteBooking = (id) => {
+    const proceed = window.confirm("Are you sure, you want to delete?");
+    if (proceed) {
+      const url = `http://localhost:5000/orders/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            alert("Deleted successfull");
+            const remainingOrders = orders.filter((item) => item._id !== id);
+            setOrders(remainingOrders);
+          }
+        });
+    }
+  };
   return (
     <div>
       {isloading ? (
@@ -27,7 +44,7 @@ const ManageOrders = () => {
             <OrderCard
               key={item._id}
               {...item}
-              // handleDeleteBooking={handleDeleteBooking}
+              handleDeleteBooking={handleDeleteBooking}
             />
           ))}
         </div>

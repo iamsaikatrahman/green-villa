@@ -1,4 +1,5 @@
 import ApartmentCard from "../../components/ApartmentCard";
+import ExploreApartmentCard from "../../components/ExploreApartmentCard";
 import Loading from "../../components/Loading";
 import useApartments from "../../hooks/useApartments";
 
@@ -9,9 +10,9 @@ const Apartments = () => {
       {isloading ? (
         <Loading />
       ) : (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1  gap-4">
           {apartments.map((apartment) => (
-            <ApartmentCard key={apartment.name} {...apartment} />
+            <ExploreApartmentCard key={apartment.name} {...apartment} />
           ))}
         </div>
       )}

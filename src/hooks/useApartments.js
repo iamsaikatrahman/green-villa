@@ -11,6 +11,25 @@ const useApartments = () => {
         setIsLoading(false);
       });
   }, []);
-  return { isloading, apartments };
+  const handleDeleteApartment = (id) => {
+    const proceed = window.confirm("Are you sure, you want to delete?");
+    if (proceed) {
+      const url = `http://localhost:5000/apartments/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            alert("Deleted successfull");
+            const remainingapartment = apartments.filter(
+              (item) => item._id !== id
+            );
+            setApartments(remainingapartment);
+          }
+        });
+    }
+  };
+  return { isloading, apartments, handleDeleteApartment };
 };
 export default useApartments;

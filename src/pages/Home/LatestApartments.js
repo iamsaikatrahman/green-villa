@@ -1,4 +1,6 @@
 import ApartmentCard from "../../components/ApartmentCard";
+import ExploreApartmentCard from "../../components/ExploreApartmentCard";
+import HomeApartmentCard from "../../components/HomeApartmentCard";
 import Loading from "../../components/Loading";
 import SectionHeader from "../../components/SectionHeader";
 import useApartments from "../../hooks/useApartments";
@@ -16,7 +18,7 @@ const LatestApartments = () => {
       ) : (
         <div className="grid md:grid-cols-2 py-8 lg:grid-cols-3 gap-4">
           {apartments.slice(0, 6).map((apartment) => (
-            <ApartmentCard key={apartment.name} {...apartment} />
+            <HomeApartmentCard key={apartment.name} {...apartment} />
           ))}
         </div>
       )}

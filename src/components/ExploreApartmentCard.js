@@ -1,11 +1,12 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
 import { GrLocation } from "react-icons/gr";
 import { IoBedOutline } from "react-icons/io5";
 import { GiBathtub } from "react-icons/gi";
 import { FiBox } from "react-icons/fi";
 
-const ApartmentCard = ({
+const ExploreApartmentCard = ({
   _id,
   name,
   imgUrl,
@@ -15,20 +16,19 @@ const ApartmentCard = ({
   bedrooms,
   bathrooms,
   aptSpace,
-  handleDeleteApartment,
 }) => {
   return (
-    <div className=" overflow-hidden shadow-lg transition duration-500 ease-in-out transform  hover:shadow-2xl rounded-lg h-full w-full  m-auto">
-      <div className=" col-span-1 flex flex-col w-full block h-full">
-        <div className="overflow-hidden">
+    <div>
+      <div className="flex items-center p-4 bg-white border-2 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800">
+        <div className="w-full">
           <img
             alt=""
+            className="w-full rounded-md border-2 border-gray-300"
             src={imgUrl}
-            className="h-56 w-full object-cover transition transform duration-500 ease-in-out hover:scale-110 "
           />
         </div>
-        <div className="bg-white w-full p-4">
-          <h2 className="text-xl mb-3 font-bold">{name.substring(0, 35)}...</h2>
+        <div className="w-full flex flex-col ml-5">
+          <h4 className="text-xl font-semibold mb-2">{name}</h4>
           <p className="text-gray-600 font-medium text-justify text-md">
             This {name} have {bedrooms} bedrooms and {bathrooms} bathrooms.{" "}
             {shortDes.substring(0, 50)}...
@@ -57,16 +57,13 @@ const ApartmentCard = ({
               {aptSpace} SqFt
             </p>
           </div>
-        </div>
-        <div className="flex flex-col mt-auto">
-          <div className="border-b-2"></div>
-          <div className="flex justify-center items-center my-2 mx-4">
-            <button
-              onClick={() => handleDeleteApartment(_id)}
-              className=" p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg font-medium rounded-lg focus:border-4 border-blue-300"
-            >
-              Delete Product
-            </button>
+          <div className="flex justify-between items-center my-2">
+            <p className="font-bold text-indigo-600 text-xl">${price}</p>
+            <Link to={`/service/${_id}`}>
+              <button className=" p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg font-medium rounded-lg focus:border-4 border-blue-300">
+                Buy Now
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -74,4 +71,4 @@ const ApartmentCard = ({
   );
 };
 
-export default ApartmentCard;
+export default ExploreApartmentCard;
