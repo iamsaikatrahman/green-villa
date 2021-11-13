@@ -10,6 +10,7 @@ import { VscServerProcess } from "react-icons/vsc";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import { FiHome } from "react-icons/fi";
 import { RiLogoutBoxLine } from "react-icons/ri";
+import { GoDashboard } from "react-icons/go";
 import { Link } from "react-router-dom";
 import logo from "../../images/footer.png";
 import useAuth from "../../hooks/useAuth";
@@ -110,20 +111,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, path, url }) => {
                 </div>
               </Link>
             </li>
-            {/* Pay */}
-            <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
-              <Link
-                exact
-                to={`${url}/pay`}
-                className="block text-gray-200 hover:text-white transition duration-150"
-              >
-                <div className="flex flex-grow">
-                  <MdPayment className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
-                  <span className="text-sm font-medium">Pay</span>
-                </div>
-              </Link>
-            </li>
-            {/* My Orders */}
+            {/* Dashboard */}
             <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
               <Link
                 exact
@@ -131,24 +119,57 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, path, url }) => {
                 className="block text-gray-200 hover:text-white transition duration-150"
               >
                 <div className="flex flex-grow">
-                  <FaRegListAlt className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
-                  <span className="text-sm font-medium">My Orders</span>
+                  <GoDashboard className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
+                  <span className="text-sm font-medium">Dashboard</span>
                 </div>
               </Link>
             </li>
+            {/* Pay */}
+            {!admin && (
+              <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
+                <Link
+                  exact
+                  to={`${url}/pay`}
+                  className="block text-gray-200 hover:text-white transition duration-150"
+                >
+                  <div className="flex flex-grow">
+                    <MdPayment className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
+                    <span className="text-sm font-medium">Pay</span>
+                  </div>
+                </Link>
+              </li>
+            )}
+
+            {/* My Orders */}
+            {!admin && (
+              <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
+                <Link
+                  exact
+                  to={`${url}/myorder`}
+                  className="block text-gray-200 hover:text-white transition duration-150"
+                >
+                  <div className="flex flex-grow">
+                    <FaRegListAlt className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
+                    <span className="text-sm font-medium">My Orders</span>
+                  </div>
+                </Link>
+              </li>
+            )}
             {/* Review */}
-            <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
-              <Link
-                exact
-                to={`${url}/review`}
-                className="block text-gray-200 hover:text-white transition duration-150"
-              >
-                <div className="flex flex-grow">
-                  <BiMessageSquareDetail className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
-                  <span className="text-sm font-medium">Review</span>
-                </div>
-              </Link>
-            </li>
+            {!admin && (
+              <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
+                <Link
+                  exact
+                  to={`${url}/review`}
+                  className="block text-gray-200 hover:text-white transition duration-150"
+                >
+                  <div className="flex flex-grow">
+                    <BiMessageSquareDetail className="flex-shrink-0 h-6 w-6 mr-3 text-gray-400" />
+                    <span className="text-sm font-medium">Review</span>
+                  </div>
+                </Link>
+              </li>
+            )}
             {/* Manage All Orders */}
             {admin && (
               <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">

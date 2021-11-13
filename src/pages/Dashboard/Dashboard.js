@@ -10,6 +10,7 @@ import Pay from "./Pay";
 import Review from "./Review";
 import Sidebar from "./Sidebar";
 import AdminRoute from "../Authentication/AdminRoute/AdminRoute";
+import DashboardHome from "./DashboardHome";
 
 const Dashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -35,10 +36,13 @@ const Dashboard = () => {
             setSidebarOpen={setSidebarOpen}
           />
           <Switch>
+            <Route exact path={path}>
+              <DashboardHome />
+            </Route>
             <Route exact path={`${path}/pay`}>
               <Pay />
             </Route>
-            <Route exact path={path}>
+            <Route exact path={`${path}/myorder`}>
               <MyOrder />
             </Route>
             <Route exact path={`${path}/review`}>
