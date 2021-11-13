@@ -101,7 +101,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, path, url }) => {
             <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
               <Link
                 exact
-                to="/"
+                to="/home"
                 className="block text-gray-200 hover:text-white transition duration-150"
               >
                 <div className="flex flex-grow">
@@ -212,6 +212,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, path, url }) => {
             {/* LogOut */}
             <li className="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
               <Link
+                exact
                 to="/"
                 onClick={logOut}
                 className="block cursor-pointer text-gray-200 hover:text-white transition duration-150"

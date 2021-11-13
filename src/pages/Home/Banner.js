@@ -42,11 +42,11 @@ const Banner = () => {
       return checkNumber(newIndex);
     });
   };
-  useEffect(() => {
-    setInterval(() => {
-      nextSlide();
-    }, 5000);
-  }, []);
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     nextSlide();
+  //   }, 5000);
+  // }, []);
   return (
     <div style={{ paddingTop: "80px" }}>
       <div className="relative">

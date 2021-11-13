@@ -50,7 +50,7 @@ const ApartmentCard = ({
             </p>
             <p className="font-medium text-base mr-4">
               <FiBox className="inline text-indigo-600 text-xl font-bold" />{" "}
-              {aptSpace}
+              {aptSpace} SqFt
             </p>
           </div>
         </div>
