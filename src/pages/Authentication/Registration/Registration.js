@@ -4,7 +4,7 @@ import logo from "../../../images/logo.png";
 import { useForm } from "react-hook-form";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import Footer from "../../../shared/Footer";
 
 const Registration = () => {

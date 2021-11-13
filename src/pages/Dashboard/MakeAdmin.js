@@ -1,7 +1,7 @@
 import React from "react";
 import makeAdmin from "../../images/makeadmin.png";
 import useAuth from "../../hooks/useAuth";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
 const MakeAdmin = () => {
   const { token } = useAuth();

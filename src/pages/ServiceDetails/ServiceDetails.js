@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import Loading from "../../components/Loading";
 import useSingleApartment from "../../hooks/useSingleApartment";
 import Footer from "../../shared/Footer";
