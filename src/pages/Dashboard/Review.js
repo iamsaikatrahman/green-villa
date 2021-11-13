@@ -18,7 +18,7 @@ const Review = () => {
   const userImg = user.photoURL;
   const handlereviewSubmit = (e) => {
     const reviewdata = { message, rating, userName, userImg };
-    console.log(reviewdata);
+
     axios
       .post("https://thawing-brook-28581.herokuapp.com/reviews", reviewdata)
       .then((res) => {

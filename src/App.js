@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AuthProvider from "./context/AuthProvider";
+import AboutUs from "./pages/AboutUs/AboutUs";
 import Login from "./pages/Authentication/Login/Login";
 import PrivateRoute from "./pages/Authentication/PrivateRoute/PrivateRoute";
 import Registration from "./pages/Authentication/Registration/Registration";
@@ -20,6 +21,9 @@ function App() {
             </Route>
             <Route exact path="/home">
               <Home />
+            </Route>
+            <Route exact path="/aboutus">
+              <AboutUs />
             </Route>
             <Route exact path="/explore">
               <Explore />

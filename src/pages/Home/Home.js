@@ -3,8 +3,8 @@ import Footer from "../../shared/Footer";
 import Navbar from "../../shared/Navbar";
 import Banner from "./Banner";
 import DesignSolution from "./DesignSolution";
+import DisplayReviews from "./DisplayReviews";
 import LatestApartments from "./LatestApartments";
-import Reviews from "./Reviews";
 import ShortAboutUs from "./ShortAboutUs";
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
         <DesignSolution />
         <LatestApartments />
         <ShortAboutUs />
-        <Reviews />
+        <DisplayReviews />
       </div>
       <Footer />
     </div>

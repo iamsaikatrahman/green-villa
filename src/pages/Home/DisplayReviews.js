@@ -6,7 +6,7 @@ import useReviews from "../../hooks/useReviews";
 import Ratings from "../../components/Rating";
 import "./Reviews.css";
 
-const Reviews = () => {
+const DisplayReviews = () => {
   const { isloading, reviews } = useReviews();
   const [index, setIndex] = useState(0);
 
@@ -52,7 +52,9 @@ const Reviews = () => {
                 />
                 <div className="w-full md:w-1/2 flex relative">
                   <div className="w-full md:w-9/12 lg:w-10/12">
-                    <h2 className="text-justify ">{reviews[index].message}</h2>
+                    <h2 className="text-justify text-lg font-medium">
+                      {reviews[index].message}
+                    </h2>
                     <div className="flex justify-center items-center mt-4">
                       <img
                         src={reviews[index].userImg}
@@ -60,7 +62,7 @@ const Reviews = () => {
                         alt=""
                       />
                       <div>
-                        <h3>{reviews[index].userName}</h3>
+                        <h3 className="font-bold">{reviews[index].userName}</h3>
                         <Ratings value={reviews[index].rating} />
                       </div>
                     </div>
@@ -87,4 +89,4 @@ const Reviews = () => {
   );
 };
 
-export default Reviews;
+export default DisplayReviews;

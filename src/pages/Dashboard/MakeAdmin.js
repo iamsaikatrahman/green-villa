@@ -22,7 +22,7 @@ const MakeAdmin = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {
-          // setEmail("");
+          alert("Admin Added Sucessfully");
         }
       });
     e.preventDefault();

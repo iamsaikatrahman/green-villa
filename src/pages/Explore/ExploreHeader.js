@@ -9,7 +9,7 @@ const ExploreHeader = () => {
             <h2 className="text-4xl text-white font-bold">
               Expore Our <br className="hidden md:block" /> Apartments
             </h2>
-            <div className="w-24 h-1.5 bg-indigo-500 rounded mx-auto md:mx-0 my-2"></div>
+            <div className="w-24 h-1.5 bg-yellow-500 rounded mx-auto md:mx-0 my-2"></div>
           </div>
         </div>
         <div className="w-full h-96">

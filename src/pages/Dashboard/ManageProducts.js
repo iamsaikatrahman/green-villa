@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ApartmentCard from "../../components/ApartmentCard";
 import Loading from "../../components/Loading";
 import useApartments from "../../hooks/useApartments";
