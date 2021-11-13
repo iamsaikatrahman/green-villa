@@ -1,9 +1,10 @@
 import React from "react";
+import EmptyMessageCard from "../../components/EmptyMessageCard";
 
 const Pay = () => {
   return (
     <div>
-      <h2>Payment System Comming Soon</h2>
+      <EmptyMessageCard message={"Our Payment System Comming Soon!!"} />
     </div>
   );
 };
