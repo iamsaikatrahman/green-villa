@@ -31,7 +31,10 @@ const ApartmentCard = ({
           <p className="text-gray-600 font-medium text-justify text-md">
             This {name} have {bedrooms} bedrooms and {bathrooms} bathrooms.{" "}
             {shortDes.substring(0, 50)}...
-            <Link to={`/tourdetails/`} className="inline-flex text-indigo-500">
+            <Link
+              to={`/service/${_id}`}
+              className="inline-flex text-indigo-500"
+            >
               Read More
             </Link>
           </p>
