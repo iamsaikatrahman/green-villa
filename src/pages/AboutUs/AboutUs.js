@@ -15,7 +15,9 @@ const AboutUs = () => {
           <div className="relative">
             <div className="flex items-center absolute w-full h-full bg-gray-800 bg-opacity-50 top-0">
               <div className="container mx-auto px-4">
-                <h2 className="text-4xl text-white font-bold">About Us</h2>
+                <h2 className="text-4xl text-white text-center md:text-left font-bold">
+                  About Us
+                </h2>
                 <div className="w-24 h-1.5 bg-yellow-500 rounded mx-auto md:mx-0 my-2"></div>
               </div>
             </div>
