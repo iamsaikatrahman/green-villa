@@ -42,17 +42,17 @@ const Banner = () => {
       return checkNumber(newIndex);
     });
   };
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     nextSlide();
-  //   }, 5000);
-  // }, []);
+  useEffect(() => {
+    setInterval(() => {
+      nextSlide();
+    }, 3000);
+  }, []);
   return (
     <div style={{ paddingTop: "80px" }}>
       <div className="relative">
         <div
           className="flex items-center absolute top-0 w-full bg-opacity-50 bg-gray-600"
-          style={{ height: "400px" }}
+          style={{ height: "400px", transition: "all 0.3s ease" }}
         >
           <div className="container mx-auto px-4 flex justify-between items-center">
             <FaAngleLeft
@@ -72,7 +72,10 @@ const Banner = () => {
             />
           </div>
         </div>
-        <div className="w-full" style={{ height: "400px" }}>
+        <div
+          className="w-full"
+          style={{ height: "400px", transition: "all 0.3s ease" }}
+        >
           <img src={bannerImg} className="w-full h-full object-cover" alt="" />
         </div>
       </div>

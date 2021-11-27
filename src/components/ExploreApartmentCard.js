@@ -19,7 +19,7 @@ const ExploreApartmentCard = ({
 }) => {
   return (
     <div>
-      <div className="flex items-center p-4 bg-white border-2 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800">
+      <div className="flex flex-col md:flex-row items-center p-4 bg-white border-2 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800">
         <div className="w-full">
           <img
             alt=""
